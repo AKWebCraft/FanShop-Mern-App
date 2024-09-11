@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+}
+.box {
+    width: 50vw;
+}
+.btn{
+    margin-left: 20px;
+}

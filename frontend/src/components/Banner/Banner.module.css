@@ -1,0 +1,19 @@
+.wrapper {
+    margin-top: 20px;
+    border: 1px solid rgb(148, 148, 148);
+    border-radius: 20px;
+}
+.rw {
+    display: flex;
+}
+.col1 {
+    width: 50%;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+}
+.col2 {
+    width: 50%;
+    margin-top: 20px;
+    
+}

@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  margin-top: 50px;
+  padding: 30px 40px;
+  box-shadow: 5px 5px 5px 5px gray;
+  border-radius: 20px;
+}
+
+.box {
+  width: 50vw;
+}
+.btn {
+  margin-left: 20px;
+}

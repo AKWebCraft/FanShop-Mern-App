@@ -1,0 +1,15 @@
+.heading{
+    color: tomato;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.rw {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+.cat{
+  cursor: pointer;
+}

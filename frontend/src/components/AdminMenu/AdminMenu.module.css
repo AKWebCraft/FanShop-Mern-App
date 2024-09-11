@@ -1,0 +1,13 @@
+.menu {
+    margin-top: 10vh;
+}
+.heading {
+    color: tomato;
+    letter-spacing: 2px;
+}
+.link {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}

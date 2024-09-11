@@ -1,0 +1,17 @@
+.link {
+    text-decoration: none;
+}
+.title {
+    color: black;
+}
+.cardDetails {
+    display: flex;
+    justify-content: space-between;
+}
+.cardDetails span {
+    color: tomato;
+}
+.fotr {
+    display: flex;
+    justify-content: space-between;
+}
