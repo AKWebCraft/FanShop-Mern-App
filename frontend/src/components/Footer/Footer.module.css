@@ -1,4 +1,20 @@
-.foter {
-    background-color: black;
-    color: white;
+.container {
+  background-color: black;
+  color: white;
+}
+.submitButton {
+  background-color: tomato;
+  color: #fff;
+  font: 500 0.9vmax "Roboto";
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px 40px;
+  height: fit-content;
+}
+.submitButton:hover {
+  background-color: #1f4ffd00;
+  color: #ffffff;
+  box-shadow: 1px 1px 1px 1px gray;
 }

@@ -1,19 +1,23 @@
 .wrapper {
-    margin-top: 20px;
-    border: 1px solid rgb(148, 148, 148);
-    border-radius: 20px;
+  width: 100%;
+  height: 500px;
+  background-image: url("../../images/banner.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
-.rw {
-    display: flex;
+.searchBox {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.col1 {
-    width: 50%;
-    padding: 20px 0px;
-    display: flex;
-    justify-content: center;
-}
-.col2 {
-    width: 50%;
-    margin-top: 20px;
-    
+
+.searchInput {
+  width: 30%;
+  height: 50px;
+  font: 200 1vmax cursive;
+  background-color: bisque !important;
+  color: black !important;
+  font-size: 17px;
 }

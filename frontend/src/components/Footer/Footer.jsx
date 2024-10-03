@@ -1,155 +1,110 @@
 import React from "react";
-import styles from "./Footer.module.css"
+import styles from "./Footer.module.css";
+import { NavLink } from "react-router-dom";
+import { createProjectReview } from "../../api/Api";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
 function Footer() {
+  const [review, setReview] = useState("");
+  const { _id } = useSelector((state) => state.user);
+
+  const handleSubmit = async () => {
+    const data = {
+      review: review,
+      author: _id,
+    };
+
+    const response = await createProjectReview(data);
+
+    if (response.status === 201) {
+      setReview("");
+    }
+  };
+
   return (
-    <div className={`container-fluid ${styles.foter}`}>
-    <div className="container">
-      <footer className="py-5">
-        <div className="row">
-          <div className="col-6 col-md-2 mb-3">
-            <h5>Section</h5>
-            <ul className="nav flex-column">
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-white">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-white">
-                  Features
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-white">
-                  Pricing
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-white">
-                  FAQs
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-white">
-                  About
-                </a>
-              </li>
-            </ul>
-          </div>
+    <div className={`container-fluid ${styles.container}`}>
+      <div className="container">
+        <footer className="py-5">
+          <div className="row">
+            <div className="col-6 col-md-2 mb-3">
+              <h5>Quick Links</h5>
+              <ul className="nav flex-column">
+                <li className="nav-item mb-2">
+                  <NavLink to="/" className="nav-link p-0 text-white">
+                    Home
+                  </NavLink>
+                </li>
+                <li className="nav-item mb-2">
+                  <NavLink to="/about" className="nav-link p-0 text-white">
+                    About Me
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
 
-          <div className="col-6 col-md-2 mb-3">
-            <h5>Section</h5>
-            <ul className="nav flex-column">
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-white">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-white">
-                  Features
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-white">
-                  Pricing
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-white">
-                  FAQs
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-white">
-                  About
-                </a>
-              </li>
-            </ul>
-          </div>
+            <div className="col-6 col-md-2 mb-3">
+              <h5>Contact Me</h5>
+              <ul className="nav flex-column">
+                <li className="nav-item mb-2">
+                  <a
+                    href="mailto:arslankhalil660@gmail.com"
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    <i
+                      className="bi bi-envelope-at"
+                      style={{ fontSize: "20px" }}
+                    ></i>{" "}
+                    Email
+                  </a>
+                </li>
+                <li className="nav-item mb-2">
+                  <a
+                    href="https://wa.me/03095508115"
+                    style={{ textDecoration: "none", color: "white" }}
+                    target="_blank"
+                  >
+                    <i
+                      className="bi bi-whatsapp"
+                      style={{ fontSize: "20px" }}
+                    ></i>{" "}
+                    Whatsapp
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-          <div className="col-6 col-md-2 mb-3">
-            <h5>Section</h5>
-            <ul className="nav flex-column">
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-white">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-white">
-                  Features
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-white">
-                  Pricing
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-white">
-                  FAQs
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-white">
-                  About
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="col-md-5 offset-md-1 mb-3">
-            <form>
-              <h5>Subscribe to our newsletter</h5>
-              <p>Monthly digest of what's new and exciting from us.</p>
+            <div className="col-md-5 offset-md-1 mb-3">
+              <h5>My MERN Ecommerce Project</h5>
+              <p>Don't forget to leave a review about my work.</p>
               <div className="d-flex flex-column flex-sm-row w-100 gap-2">
-                <label htmlFor="newsletter1" className="visually-hidden">
-                  Email address
-                </label>
+                <label
+                  htmlFor="newsletter1"
+                  className="visually-hidden"
+                ></label>
                 <input
-                  id="newsletter1"
                   type="text"
+                  value={review}
                   className="form-control"
-                  placeholder="Email address"
+                  placeholder="Leave Review Here..."
+                  onChange={(e) => setReview(e.target.value)}
                 />
-                <button className="btn btn-primary" type="button">
-                  Subscribe
+                <button
+                  className={styles.submitButton}
+                  type="button"
+                  onClick={handleSubmit}
+                >
+                  Submit
                 </button>
               </div>
-            </form>
+            </div>
           </div>
-        </div>
 
-        <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-          <p>© 2024 Company, Inc. All rights reserved.</p>
-          <ul className="list-unstyled d-flex">
-            <li className="ms-3">
-              <a className="link-body-emphasis" href="#">
-                <svg className="bi" width="24" height="24">
-                  <use xlinkHref="#twitter"></use>
-                </svg>
-              </a>
-            </li>
-            <li className="ms-3">
-              <a className="link-body-emphasis" href="#">
-                <svg className="bi" width="24" height="24">
-                  <use xlinkHref="#instagram"></use>
-                </svg>
-              </a>
-            </li>
-            <li className="ms-3">
-              <a className="link-body-emphasis" href="#">
-                <svg className="bi" width="24" height="24">
-                  <use xlinkHref="#facebook"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </footer>
-    </div>
+          <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+            <p>© 2024 Company, Inc. All rights reserved.</p>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }

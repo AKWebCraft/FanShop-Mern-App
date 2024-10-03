@@ -1,0 +1,31 @@
+.firstSection {
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
+.firstSectionHeading {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  color: rgb(248, 80, 50);
+  letter-spacing: 1px;
+}
+.productName {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.checkOutButton {
+  background-color: tomato;
+  color: #fff;
+  font: 500 0.9vmax "Roboto";
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px 40px;
+  height: fit-content;
+}
+.checkOutButton:hover {
+  background-color: #1f4ffd00;
+  color: #000000;
+  box-shadow: 1px 1px 1px 1px gray;
+}

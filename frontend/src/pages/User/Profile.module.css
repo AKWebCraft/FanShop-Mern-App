@@ -1,0 +1,15 @@
+.profileBox {
+  display: flex;
+  height: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.UserIcon {
+  font-size: 50px;
+  color: tomato;
+}
+.userName {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 1px;
+}

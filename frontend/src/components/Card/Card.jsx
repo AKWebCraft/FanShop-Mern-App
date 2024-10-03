@@ -1,35 +1,56 @@
 import React from "react";
-import producti from "../../images/product-3.jpeg";
-import { Link } from "react-router-dom";
-import ReactStars from "react-rating-stars-component";
 import styles from "./Card.module.css";
-import "bootstrap-icons/font/bootstrap-icons.css"
+import "bootstrap-icons/font/bootstrap-icons.css";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { addToCart } from "../../api/Api";
+import { setCart } from "../../store/cartSlice";
+import { useDispatch } from "react-redux";
 
 function Card({ item }) {
+  const dispatch = useDispatch();
+  const { _id } = useSelector((state) => state.user);
+  const { cart } = useSelector((state) => state.cart);
+
+  const handleCart = () => {
+    const data = {
+      productId: item._id,
+      UserId: _id,
+    };
+    (async function addItemToCart() {
+      const response = await addToCart(data);
+
+      if (response.status === 201) {
+        dispatch(setCart([...cart, response.data.cartResponse]));
+      }
+    })();
+  };
+
   return (
     <>
       <div className="card mt-3 ms-3" style={{ width: "16rem" }}>
         <Link className={styles.link} to={`/product/details/${item._id}`}>
-          <img src={producti} className="card-img-top" alt="..." />
-          <div className="card-body">
-            <h5 className={`card-title ${styles.title}`}>{item.name}</h5>
-            <div className={styles.cardDetails}>
-              <ReactStars
-                edit={false}
-                color="rgba(20,20,20,0.1)"
-                activeColor="tomato"
-                size={window.innerWidth < 600 ? 20 : 25}
-                value={item.ratings}
-                isHalf={true}
-              />{" "}
-              <span className="mt-2">{`(${item.numOfReviews} Reviews)`}</span>
-            </div>
-            <div className={styles.fotr}>
-            <span className="text-dark">{`₹${item.price}`}</span>
-            <i className="bi bi-cart4"></i>
-            </div>
-          </div>
+          <img
+            src={item.imageUrl}
+            className="card-img-top"
+            alt="..."
+            height="250"
+          />
         </Link>
+        <div className="card-body">
+          <Link className={styles.link} to={`/product/details/${item._id}`}>
+            <h5 className={`card-title ${styles.productName}`}>{item.name}</h5>
+          </Link>
+          <div className={styles.wrapper}>
+            <h6
+              className={`text-dark mt-2 ${styles.productPrice}`}
+            >{`₹ ${item.price}`}</h6>
+            <i
+              className={`bi bi-cart-plus ${styles.cartIcon}`}
+              onClick={handleCart}
+            ></i>
+          </div>
+        </div>
       </div>
     </>
   );

@@ -1,0 +1,36 @@
+.firstSection {
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
+.bankIcon {
+  color: tomato;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+.firstSectionHeading {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.secondSectionHeading {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: tomato;
+}
+.conFirmOrderButton {
+  background-color: tomato;
+  color: #fff;
+  font: 500 0.9vmax "Roboto";
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px 40px;
+  height: fit-content;
+}
+.conFirmOrderButton:hover {
+  background-color: #1f4ffd00;
+  color: #000000;
+  box-shadow: 1px 1px 1px 1px gray;
+}

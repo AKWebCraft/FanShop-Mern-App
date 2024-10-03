@@ -14,11 +14,7 @@ function Form({ handleSubmit, name, setName }) {
         />
       </div>
       <div>
-        <button
-          type="submit"
-          className={`btn btn-primary ${styles.btn}`}
-          onClick={handleSubmit}
-        >
+        <button type="submit" className={styles.Button} onClick={handleSubmit}>
           Submit
         </button>
       </div>

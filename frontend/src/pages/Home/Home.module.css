@@ -1,15 +1,38 @@
-.heading{
-    color: tomato;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
+.heading {
+  color: tomato;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
-.rw {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-grow: 1;
+.FilterBox {
+  border: 1px solid #e9ecef;
+  border-radius: 30px;
+  margin-top: 85px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 20px;
 }
-.cat{
-  cursor: pointer;
+.filterHeading {
+  font: 400 1.4vmax cursive;
+}
+.productsHeading {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 3px;
+}
+
+.productsBox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.paginaton {
+  height: 100px;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.categoryList {
+  list-style: none;
 }

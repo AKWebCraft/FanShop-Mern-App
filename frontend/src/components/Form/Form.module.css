@@ -1,9 +1,24 @@
 .container {
-    display: flex;
+  display: flex;
 }
 .box {
-    width: 50vw;
+  width: 50vw;
 }
-.btn{
-    margin-left: 20px;
+.Button {
+  background-color: tomato;
+  color: #fff;
+  font: 500 0.9vmax "Roboto";
+  letter-spacing: 1px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px 40px;
+  height: fit-content;
+  margin-left: 20px;
+}
+.Button:hover {
+  background-color: #1f4ffd00;
+  color: #000000;
+  box-shadow: 1px 1px 1px 1px gray;
 }
